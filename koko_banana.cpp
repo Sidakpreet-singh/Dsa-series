@@ -22,6 +22,8 @@ int minEatingSpeed(vector<int>& piles, int h) {
             start = 1;
         }
 
+        
+
         while(start <= end){
             int mid = start + (end - start)/2;
             int total_time = 0;
