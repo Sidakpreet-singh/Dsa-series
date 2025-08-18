@@ -22,7 +22,7 @@ using namespace std;
 
 
 // --------------recursion-----------------
-// ecloid's algo-----------
+// eculid's algo-----------
 
 int gcdr(int a,int b){
   if(b ==0) return a;
