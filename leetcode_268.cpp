@@ -19,4 +19,5 @@ int missingNumber(vector<int>& nums) {
 int main(){
   vector <int> arr = {0,1,3};
   cout<<missingNumber(arr);
+  return 0;
 }
