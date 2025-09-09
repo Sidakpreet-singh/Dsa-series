@@ -35,12 +35,22 @@ class students{
     
 
   }
+  
+  students( students &obj){ 
+    this->name = obj.name;
+    this->branch = obj.branch;
+    this->uid = obj.uid;
+    this->fees = obj.fees;
+    
+    
+
+  }
 };
 
 int main(){
   students s1("sidak","AI",1152,32500);
   students s2("abc","AI",1152,32500);
-  students s3("xyz","AI",1152,32500);
+  students s3(s2);
   s1.cfees(30000);
 
   cout<<"name :"<<s1.name<<" branch:"<<s1.branch<<" uid:"<<s1.uid<<" fees: "<<s1.fees<<endl;
