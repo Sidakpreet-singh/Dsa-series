@@ -141,7 +141,7 @@ int res(vector<int> arr)
   int ans;
   
   for(int i =0 ; i<n;i++){
-    if(freq == 0){
+    if(freq <= 0){
        ans = arr[i];
     }
     if(arr[i]== ans){
@@ -160,7 +160,7 @@ int res(vector<int> arr)
 
 int main()
 {
-  vector<int> vec = {6, 6, 9, 6, 9,6,9,9};
+  vector<int> vec = {6, 6, 9, 6, 9,6,9,9,9};
   cout << "the majority element :" << res(vec) << endl;
   return 0;
 }
