@@ -29,9 +29,9 @@ int lowerbound(vector <int> arr,int target){
 }
 
 int main(){
-  vector <int> arr = {2,3,4,5,5,6,8,8,9,11};
+  vector <int> arr = {2,3,4,5,6,8,8,9};
   
-  int target = 8;
+  int target = 5;
   cout<<"lower bound:"<<lowerbound( arr,target);
  
 }

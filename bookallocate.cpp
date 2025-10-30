@@ -3,55 +3,63 @@
 using namespace std;
 
 
-bool ispossible(int arr[], int n, int k,int mid ){
+bool ispossible(vector<int> arr, int n, int k,int mid ){
+
     int studcount = 1;
-    int pages = 0;
-    for(int i =0;i<n;i++){
-        if(pages + arr[i] <= mid){
-            pages += arr[i];
+    int pagesum = 0;
+    for(int i =0; i<n;i++){
+        if(pagesum+arr[i] <= mid){
+        pagesum+=arr[i];
         }
         else{
             studcount++;
-            if(studcount > k || arr[i] > mid){
+            if(studcount > k || arr[i]> mid){
                 return false;
             }
-            pages = arr[i];
-        }
-        if(n < k){
-            return false;
+            pagesum = arr[i];
         }
     }
-    return true;
+
+    if(k>n){
+        return false;
+    }
+
+    
+        return true;
+    
+
+ 
 }
 
 
 
 
 
-int findPages(int arr[], int n, int k) {
-    
-    int s =0;
+int findPages(vector<int> arr, int n, int k) {
+
+    int s = 0;
     int sum = 0;
-    for(int i =0;i<n;i++){
+    for(int i =0; i< n;i++){
         sum += arr[i];
     }
-    
-    int e = sum;
-    int ans = -1;
-    int mid = s + (e-s)/2;
-    
-    while(s<=e){
+    int end = sum;
+    int ans  = -1;
+
+    while(s<= end){
+        int mid = s + (end - s)/2;
+
         if(ispossible(arr,n,k,mid)){
-            e = mid -1;
-            ans  = mid;
+            ans = mid;
+            end = mid-1;
+
         }
         else{
-            s = mid +1;
+            s = mid+1;
         }
-       mid = s + (e-s)/2;
     }
-    return ans;
+
     
+  return ans;
     
 }
 
@@ -59,6 +67,6 @@ int main(){
   vector<int>arr ={12,34,67,90};
   int n = arr.size();
   int k =2;
-  cout << "the smallest value "<< findPages(arr.data(),n,k);
+  cout << "the smallest value "<< findPages(arr,n,k);
 
 }
